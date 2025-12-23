@@ -15,5 +15,4 @@ Designed with a clean, elegant UI and subtle animations for a polished feel.
 - **React** + **TypeScript**
 - **Vite** (fast development & build tooling)
 - **Tailwind CSS**
-- **shadcn/ui**
 - **React Bits** (UI effects & components)
