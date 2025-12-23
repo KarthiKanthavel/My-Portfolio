@@ -3,36 +3,38 @@
   position: relative;
   min-height: 100vh;
   color: white;
-  overflow: hidden;
   background: #0b0b10;
+
+  /* important: allow scrolling, prevent sideways overflow */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-
-
-
 /* Background layer */
 .home-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-
 }
 
+/* Navbar */
+.site-header {
+  position: relative;
+  z-index: 10;
+}
 
 .navbar-inner {
   position: relative;
   max-width: 1100px;
   height: 80px;
   margin: 0 auto;
-  margin-top: 50px ;
-  padding: 1px 10px;
-  z-index :10;
-  background-color: transparent;
+  margin-top: 50px;
+  padding: 1px 20px;
 
   display: flex;
   justify-content: space-between;
@@ -41,17 +43,15 @@ html {
   backdrop-filter: blur(12px);
   background: rgba(253, 253, 253, 0.075);
   border-radius: 80px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo {
   display: flex;
   align-items: center;
   font-size: 30px;
-  font-family: Luminari; 
+  font-family: Luminari;
   font-weight: lighter;
- 
-
 }
 
 .nav-links {
@@ -61,80 +61,149 @@ html {
 }
 
 .nav-links a {
-  margin-right: 30px;
-  display: flex;
-  align-items: center;
-  font-size: 25px;
+  padding: 8px 14px;
+  border-radius: 14px;
+
+  font-size: 22px;
   color: aliceblue;
-  font-family: Luminari; 
+  font-family: Luminari;
   font-weight: lighter;
+
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: white;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.12);
- 
-
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-
-/* Hero */
-.hero {
+/* Shared section wrapper */
+.section {
   position: relative;
   z-index: 1;
-
-  height: 1100px;
-  width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding-top: 60px;
-  
+  padding: 110px 24px;
+  scroll-margin-top: 120px; 
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding-top: 24vh;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-family: Luminari;
+  justify-content: flex-start;
+
   text-align: center;
-  padding: 0 24px;
-  color: rgb(255, 255, 255);
+  font-family: Luminari;
 }
 
 .hero h1 {
-  font-size: clamp(40px, 6vw, 56px);
+  font-size: clamp(40px, 6vw, 70px);
   font-weight: 700;
+  margin-bottom: 18px;
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.9);
-  opacity: 80%;
+  opacity: 0.85;
 }
 
-.hero p {
-  color: #678597;
-  margin-bottom: 32px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.hero-typed {
+  margin-top: 12px;
+  opacity: 0.9;
+  font-size: clamp(16px, 2vw, 22px);
 }
 
-/* Buttons */
-.hero-buttons {
+/* ABOUT */
+.about {
+  min-height: 100vh;
+  padding: 0; /* avoid double padding */
+}
+
+.about-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 440px 1fr; /* bigger card column */
+  gap: 110px;                       /* ⬅ more spacing */
+  align-items: center;
+}
+
+.about-left {
   display: flex;
-  gap: 16px;
-  opacity: 70%;
+  justify-content: flex-start;
 }
 
-.primary {
-  background: white;
-  color: black;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 500;
+.about-right {
+  max-width: 560px;                 /* ⬅ keeps text from stretching ugly */
 }
 
-.secondary {
-  background: rgba(255,255,255,0.1);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.2);
+.about-title {
+  font-family: Luminari;
+  font-size: clamp(44px, 4.5vw, 64px);
+  margin: 0 0 18px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
+
+.about-p {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial;
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.86);
+  margin: 0 0 26px;
+}
+
+.about-subtitle {
+  font-family: Luminari;
+  font-size: clamp(22px, 2.4vw, 30px);
+  margin: 22px 0 12px;
+  display: inline-block;
+  opacity: 0.95;
+}
+
+
+
+.about-list {
+  margin: 0;
+  padding-left: 18px;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial;
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.82);
+}
+
+.about-list li {
+  margin: 6px 0;
+}
+
+/* Decrypted styling */
+.encrypted {
+  opacity: 0.55;
+  color: rgba(247, 0, 255, 0.75);
+  filter: blur(0.2px);
+}
+
+@media (max-width: 980px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .about-left {
+    justify-content: center;
+  }
+  .about-right {
+    max-width: 100%;
+    text-align: center;
+  }
+  .about-list {
+    text-align: left;
+    display: inline-block;
+  }
+}
+

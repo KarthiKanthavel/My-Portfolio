@@ -1,0 +1,82 @@
+.pc-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.pc-card{
+  /* ...keep your variables... */
+
+  width: min(420px, 92vw);     /* ⬅ bigger */
+  border-radius: 24px;
+
+  /* keep the tilt */
+  transform-style: preserve-3d;
+  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--z));
+  transition: transform 180ms ease;
+
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 1px rgba(247,0,255,0.12),
+    0 22px 70px rgba(247,0,255,0.18),
+    0 24px 95px rgba(90,0,255,0.14);
+}
+
+
+.pc-bg{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(247,0,255,0.35), transparent 55%),
+    radial-gradient(120% 120% at 100% 20%, rgba(120,0,255,0.32), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  filter: saturate(1.2);
+}
+
+.pc-glare{
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at var(--mx) var(--my),
+    rgba(255,255,255,0.28),
+    rgba(255,255,255,0.06) 25%,
+    transparent 55%);
+  transform: translateZ(20px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.pc-content{
+  position: relative;
+  padding: 22px;             /* ⬅ more breathing room */
+  transform: translateZ(10px);
+}
+
+
+.pc-name{
+  margin: 0;
+  font-size: 20px;
+  color: rgba(255,255,255,0.92);
+}
+
+.pc-title{
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  color: rgba(220,210,255,0.78);
+}
+
+.pc-sub{
+  margin: 8px 0 14px 0;
+  font-size: 12px;
+  color: rgba(210,225,245,0.7);
+}
+
+.pc-photo img{
+  width: 100%;
+  height: 320px;             /* ⬅ add this */
+  object-fit: cover;         /* ⬅ add this */
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  display: block;
+}
+
