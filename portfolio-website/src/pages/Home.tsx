@@ -1,7 +1,8 @@
 import LightRays from "../components/LightRays";
 import ProfileCard from "../components/ProfileCard";
 import TextType from "../components/TextType";
-import DecryptedText from "../components/DecryptedText";
+import ProjectsSection from "../components/ProjectsSection";
+import ContactsSection from "../components/ContactsSection";
 import "./Home.css";
 
 export default function Home() {
@@ -48,7 +49,7 @@ export default function Home() {
               "Computer Science @ Carleton",
               "Full-stack developer",
               "Clean UI • Fast performance",
-              "Building projects that ship",
+              "Building projects that have an impact.",
             ]}
             typingSpeed={55}
             pauseDuration={1400}
@@ -69,44 +70,38 @@ export default function Home() {
           </div>
 
           <div className="about-right">
-            <h2 className="about-title">Who Am I?</h2> 
+            <h2 className="about-title">Who Am I?</h2>
 
-
-            <a>Psssttt! Maybe Hovering will fix it?... </a>
             <p className="about-p">
-              <DecryptedText
-                text="I’m a Computer Science student focused on building modern, high-performance web apps. I work across the stack — clean, responsive UI on the front end, and reliable APIs + databases on the back end. I care about speed, detail, and shipping things that feel premium."
-                className="about-desc"
-                speed={25}
-              />
+              I am a Computer Science student who enjoys building things, learning
+              as I go, and challenging myself to improve over time. I like
+              working on meaningful projects, staying disciplined, and exploring
+              interests both inside and outside of tech.
             </p>
 
+            {/* keep this as same class so it matches sizes/alignment */}
+            <h2 className="about-title about-title--small">What Do I Do?</h2>
 
-            <h3 className="about-title">What Do I Do?</h3>
-
-
-            
-
+            {/* use a real list class (not about-p) so spacing looks clean */}
             <ul className="about-p">
-              <li>Full-stack web apps (React + APIs / databases)</li>
-              <li>Responsive UI + smooth interactions</li>
-              <li>Performance + clean architecture</li>
+              <li>- Build websites and MVPs for clients</li>
+              <li>- Black Belt Taekwondo (10+ years)</li>
+              <li>- CS First Year Representative @ Carleton</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="section">
-        <h2 className="section-title">Projects</h2>
-        {/* add your project cards/grid here */}
+      <section id="projects" className="section section-projects">
+        <ProjectsSection />
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="section">
-        <h2 className="section-title">Contacts</h2>
+      
+
+        <ContactsSection />
         {/* add contact links/form here */}
-      </section>
+      
     </div>
   );
 }
