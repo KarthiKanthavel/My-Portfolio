@@ -12,7 +12,7 @@ export default function ProfileCard({
   name = "Karthi Kanthavel",
   title = "CS Student • Developer",
   subtitle = "I build clean web apps and UI.",
-  imageUrl = "pugblic/images/me.jpg",
+  imageUrl = "/My-Portfolio/images/me.jpg",
 }: ProfileCardProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
