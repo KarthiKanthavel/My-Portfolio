@@ -12,7 +12,6 @@ export default function ProfileCard({
   name = "Karthi Kanthavel",
   title = "CS Student • Developer",
   subtitle = "I build clean web apps and UI.",
-  imageUrl = "/My-Portfolio/images/me.jpg",
 }: ProfileCardProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -67,7 +66,7 @@ export default function ProfileCard({
           </div>
 
           <div className="pc-photo">
-            <img src={imageUrl} alt={name} />
+            <img src={"./images/me.jpg"} alt={name} />
           </div>
         </div>
       </article>
