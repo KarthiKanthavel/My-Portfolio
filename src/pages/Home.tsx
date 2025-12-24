@@ -4,8 +4,11 @@ import TextType from "../components/TextType";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactsSection from "../components/ContactsSection";
 import "./Home.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="home-root">
       {/* Background */}
@@ -24,18 +27,46 @@ export default function Home() {
         />
       </div>
 
-      {/* Navbar */}
-      <header className="site-header">
-        <div className="navbar-inner">
-          <div className="logo">Karthi Kanthavel</div>
+    
 
-          <nav className="nav-links">
-            <a href="#about">Who Am I?</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contacts</a>
-          </nav>
+    {/* Navbar */}
+    <header className="site-header">
+      {/* DESKTOP NAV (unchanged look) */}
+      <div className="navbar-inner desktop-nav">
+        <div className="logo">Karthi Kanthavel</div>
+
+        <nav className="nav-links">
+          <a href="#about">Who Am I?</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contacts</a>
+        </nav>
+      </div>
+
+      {/* MOBILE NAV (pill + dropdown) */}
+      <div className="mobile-nav">
+        <div className="mobile-pill">
+          <div className="mobile-logo">Karthi Kanthavel</div>
+
+          <button
+            className="mobile-menu-btn"
+            aria-label="Open menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            ☰
+          </button>
         </div>
-      </header>
+
+        {open && (
+          <div className="mobile-dropdown">
+            <a onClick={() => setOpen(false)} href="#about">Who Am I?</a>
+            <a onClick={() => setOpen(false)} href="#projects">Projects</a>
+            <a onClick={() => setOpen(false)} href="#contact">Contacts</a>
+          </div>
+        )}
+      </div>
+    </header>
+
 
       {/* HERO */}
       <section className="hero section">
@@ -46,10 +77,11 @@ export default function Home() {
         <div className="hero-typed">
           <TextType
             texts={[
-              "Computer Science @ Carleton",
-              "Full-stack developer",
-              "Clean UI • Fast performance",
-              "Building projects that have an impact.",
+              "Computer Science AI & ML @ Carleton",
+              "Full‑Stack Developer with a purpose.",
+              "Designing with clarity.",
+              "Building with impact.",
+              "Focused on work that makes a difference.",
             ]}
             typingSpeed={55}
             pauseDuration={1400}
@@ -84,9 +116,9 @@ export default function Home() {
 
             {/* use a real list class (not about-p) so spacing looks clean */}
             <ul className="about-p">
-              <li>- Build websites and MVPs for clients</li>
-              <li>- Black Belt Taekwondo (10+ years)</li>
-              <li>- CS First Year Representative @ Carleton</li>
+              <li>Build websites and MVPs for clients</li>
+              <li>Black Belt Taekwondo (10+ years)</li>
+              <li>CS First Year Representative @ Carleton</li>
             </ul>
           </div>
         </div>
