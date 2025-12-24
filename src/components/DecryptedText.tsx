@@ -18,7 +18,7 @@ export default function DecryptedText({
   characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=<>?/|",
 }: DecryptedTextProps) {
   const [display, setDisplay] = useState<string>("");
-  const [revealedCount, setRevealedCount] = useState(0);
+  const [, setRevealedCount] = useState(0);
   const [hovering, setHovering] = useState(false);
 
   const timerRef = useRef<number | null>(null);
