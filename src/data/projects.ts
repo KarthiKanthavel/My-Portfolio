@@ -24,7 +24,7 @@ export const projects: Project[] = [
      
     ],
     repoUrl: "https://YOUR-CLIENT-SITE.com",
-    images: ["src/projects/engine-1.png"],
+    images: ["./images/engine-1.png"],
     status: "Local",
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
       
     ],
     liveUrl: "https://kidsloveinvesting.ca/",
-    images: ["src/projects/kli-1.png", "src/projects/kli-2.png", "src/projects/kli-3.png"],
+    images: ["./images/kli-1.png", "./images/kli-2.png", "./images/kli-3.png"],
     status: "Live",
   },
   {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/KarthiKanthavel/taxmate",
     UIDemoUrl: "https://github.com/YOURNAME/taxmate",
-    images: ["src/projects/taxmate-1.png", "src/projects/taxmate-2.png" , "src/projects/taxmate-3.png"],
+    images: ["./images/taxmate-1.png", "./images/taxmate-2.png" , "./images/taxmate-3.png"],
     status: "Local",
   },
   {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://YOURNAME.github.io/portfolio-website",
     repoUrl: "https://github.com/KarthiKanthavel/My-Portfolio",
-    images: ["src/projects/portfolio-1.png"],
+    images: ["./images/portfolio-1.png"],
     status: "Live",
   },
 ];

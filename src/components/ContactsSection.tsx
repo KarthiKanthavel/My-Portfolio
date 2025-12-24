@@ -34,7 +34,7 @@ export default function ContactsSection() {
         <ContactCard
           title="Resume"
           subtitle="One-page PDF"
-          href="src/projects/Karthi-Resume.pdf"
+          href="./images/Karthi-Resume.pdf"
           icon="download"
         />
       </div>
