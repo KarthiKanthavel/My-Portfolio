@@ -66,7 +66,7 @@ export const projects: Project[] = [
     highlights: [
       
     ],
-    liveUrl: "https://YOURNAME.github.io/portfolio-website",
+    liveUrl: "https://karthikanthavel.github.io/My-Portfolio",
     repoUrl: "https://github.com/KarthiKanthavel/My-Portfolio",
     images: ["./images/portfolio-1.png"],
     status: "Live",
